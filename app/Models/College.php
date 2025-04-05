@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Student;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,4 +12,10 @@ class College extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'address'];
+
+    public function students()
+{
+    return $this->hasMany(Student::class);
 }
+}
+

@@ -34,7 +34,8 @@ class CollegeController extends Controller
             'address' => 'required',
         ]);
 
-        College::create($request->all());
+        College::create($request->only(['name', 'address']));
+
 
         return redirect()->route('colleges.index')->with('success', 'College added successfully!');
     }
